@@ -4,6 +4,11 @@ import settings
 import asyncio
 
 loop = asyncio.get_event_loop()
+
+from graphics import Window, draw_frame
+d = Window(width=800, height=600, caption='pyBoxelEngine', resizable=True)
+
+##An example
 counter = [0]
 
 async def print_counter():
@@ -15,7 +20,7 @@ async def print_counter():
         counter[0] += 1
         await asyncio.sleep(3)
 
-
+##The interactive shell
 @asyncio.coroutine
 def interactive_shell():
     """
@@ -28,11 +33,9 @@ def interactive_shell():
     # Stop the loop when quitting the repl. (Ctrl-D press.)
     loop.stop()
 
-from graphics import Window, draw_frame
 def main():
-    d = Window(width=800, height=600, caption='pyBoxelEngine', resizable=True)
     asyncio.async(draw_frame(d))
-    asyncio.async(print_counter())
+#    asyncio.async(print_counter()) #Example counter
     asyncio.async(interactive_shell())
 
     loop.run_forever()
