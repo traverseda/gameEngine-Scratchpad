@@ -51,3 +51,53 @@ Our view calls the render function on the renderer.
                          +----+
 
 ```
+
+# Mesh simplification
+
+Why do we want mesh simplification?
+
+
+```
+   .----.----.
+  /    /    /|
+ /    /    / |
+.----.----.  .
+|    |    | /
+|    |    |/
+.----.----.
+
+```
+
+This two by two cube has 5 (visable) quades.
+With a bit of mesh simplification we can bring that down to
+3 quades. 
+
+```
+   .---------.
+  /         /|
+ /         / |
+.---------.  .
+|         | /
+|         |/
+.---------.
+
+```
+
+
+We can reduce the number of quades even more for
+more complicated geometry.
+
+Thanks to python async we can do that all in the background,
+more or less. This lets us experement with more complicated algos
+relativly cheapy, and using python.
+
+
+
+
+
+
+
+
+
+
+
